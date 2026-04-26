@@ -1,5 +1,0 @@
-model,type,overall,chat,chat_hard,safety,reasoning,notes
-OpenAssistant/reward-model-deberta-v3-large-v2,Classifier RM,,,,,,
-RLHFlow/ArmoRM-Llama3-8B-v0.1,Classifier RM,,,,,,
-Qwen/Qwen1.5-0.5B-Chat,DPO-style,,,,,,
-HuggingFaceH4/zephyr-7b-beta,DPO-style,,,,,,
