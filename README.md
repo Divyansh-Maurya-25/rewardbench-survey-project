@@ -47,3 +47,37 @@ figures/
 report/
   main.tex
   references.bib
+
+
+Setup
+The experiments use the official RewardBench codebase.
+git clone https://github.com/allenai/reward-bench.git
+cd reward-bench
+pip install -e .
+
+Running Experiments
+Reward model example:
+python scripts/run_rm.py \
+  --model=OpenAssistant/reward-model-deberta-v3-large-v2 \
+  --chat_template=raw \
+  --batch_size=8
+DPO-style model example:
+python scripts/run_dpo.py \
+  --model=Qwen/Qwen1.5-0.5B-Chat \
+  --ref_model=Qwen/Qwen1.5-0.5B \
+  --batch_size=8
+
+Results
+Processed results are stored in:
+results/model_comparison.csv
+results/section_scores.csv
+
+Figures are stored in:
+figures/
+Notes
+This repository does not replace the original RewardBench repository. Instead, it provides standalone scripts, notebooks, results, and analysis files for this course survey project.
+
+Commit it with:
+
+```text
+Update README with project overview
