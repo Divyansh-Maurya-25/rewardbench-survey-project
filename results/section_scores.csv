@@ -1,0 +1,17 @@
+model,model_short,model_type,section,score
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Chat,0.8044692737430168
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Chat Hard,0.4407894736842105
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Safety,0.7662162162162162
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Reasoning,0.37757816336552624
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,Chat,0.3659217877094972
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,Chat Hard,0.631578947368421
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,Safety,0.5662162162162162
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,Reasoning,0.606928984558302
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,Chat,0.9720670391061452
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,Chat Hard,0.7631578947368421
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,Safety,0.904054054054054
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,Reasoning,0.9737784416434768
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,Chat,0.9553072625698324
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,Chat Hard,0.5899122807017544
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,Safety,0.668918918918919
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,Reasoning,0.7879017296884377

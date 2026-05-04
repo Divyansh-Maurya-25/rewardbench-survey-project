@@ -1,0 +1,93 @@
+model,model_short,model_type,subset,correct,total,score
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,alpacaeval-easy,84,100,0.84
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,alpacaeval-hard,92,95,0.968421052631579
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,alpacaeval-length,65,95,0.6842105263157895
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,donotanswer,70,136,0.5147058823529411
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-cpp,98,164,0.5975609756097561
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-go,96,164,0.5853658536585366
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-java,135,164,0.823170731707317
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-js,75,164,0.4573170731707317
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-python,94,164,0.573170731707317
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-rust,124,164,0.7560975609756098
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-GPTInst,65,92,0.7065217391304348
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-GPTOut,0,47,0.0
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-manual,17,46,0.3695652173913043
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-neighbor,66,134,0.4925373134328358
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-natural,21,100,0.21
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,math-prm,55,447,0.12304250559284116
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,mt-bench-easy,14,28,0.5
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,mt-bench-hard,32,37,0.8648648648648649
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,mt-bench-med,33,40,0.825
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,refusals-dangerous,64,100,0.64
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,refusals-offensive,70,100,0.7
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,xstest-should-refuse,146,154,0.948051948051948
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,xstest-should-respond,217,250,0.868
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,alpacaeval-easy,6,100,0.06
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,alpacaeval-hard,32,95,0.3368421052631579
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,alpacaeval-length,65,95,0.6842105263157895
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,donotanswer,82,136,0.6029411764705882
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-cpp,81,164,0.49390243902439024
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-go,84,164,0.5121951219512195
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-java,79,164,0.4817073170731707
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-js,80,164,0.4878048780487805
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-python,79,164,0.4817073170731707
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,hep-rust,76,164,0.4634146341463415
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,llmbar-adver-GPTInst,56,92,0.6086956521739131
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,llmbar-adver-GPTOut,24,47,0.5106382978723404
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,llmbar-adver-manual,27,46,0.5869565217391305
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,llmbar-adver-neighbor,103,134,0.7686567164179104
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,llmbar-natural,56,100,0.56
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,math-prm,325,447,0.727069351230425
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,mt-bench-easy,11,28,0.39285714285714285
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,mt-bench-hard,22,37,0.5945945945945946
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,mt-bench-med,17,40,0.425
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,refusals-dangerous,81,100,0.81
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,refusals-offensive,83,100,0.83
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,xstest-should-refuse,129,154,0.8376623376623377
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,xstest-should-respond,44,250,0.176
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,alpacaeval-easy,98,100,0.98
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,alpacaeval-hard,89,95,0.9368421052631579
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,alpacaeval-length,93,95,0.9789473684210527
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,donotanswer,108,136,0.7941176470588235
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-cpp,155,164,0.9451219512195121
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-go,159,164,0.9695121951219512
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-java,160,164,0.975609756097561
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-js,160,164,0.975609756097561
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-python,159,164,0.9695121951219512
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,hep-rust,146,164,0.8902439024390244
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-GPTInst,71,92,0.7717391304347826
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-GPTOut,31,47,0.6595744680851063
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-manual,31,46,0.6739130434782609
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-neighbor,92,134,0.6865671641791045
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-natural,93,100,0.93
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,math-prm,444,447,0.9932885906040269
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,mt-bench-easy,28,28,1.0
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,mt-bench-hard,30,37,0.8108108108108109
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,mt-bench-med,40,40,1.0
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,refusals-dangerous,93,100,0.93
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,refusals-offensive,97,100,0.97
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,xstest-should-refuse,153,154,0.9935064935064936
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,xstest-should-respond,218,250,0.872
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,alpacaeval-easy,95,100,0.95
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,alpacaeval-hard,93,95,0.9789473684210527
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,alpacaeval-length,90,95,0.9473684210526315
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,donotanswer,91,136,0.6691176470588235
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-cpp,151,164,0.9207317073170732
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-go,155,164,0.9451219512195121
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-java,154,164,0.9390243902439024
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-js,154,164,0.9390243902439024
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-python,148,164,0.9024390243902439
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,hep-rust,148,164,0.9024390243902439
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-GPTInst,21,92,0.22826086956521738
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-GPTOut,28,47,0.5957446808510638
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-manual,27,46,0.5869565217391305
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-neighbor,89,134,0.664179104477612
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-natural,76,100,0.76
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,math-prm,291,447,0.6510067114093959
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,mt-bench-easy,26,28,0.9285714285714286
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,mt-bench-hard,28,37,0.7567567567567568
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,mt-bench-med,38,40,0.95
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,refusals-dangerous,32,100,0.32
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,refusals-offensive,36,100,0.36
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,xstest-should-refuse,97,154,0.6298701298701299
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,xstest-should-respond,239,250,0.956

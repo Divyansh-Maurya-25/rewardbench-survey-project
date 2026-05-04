@@ -1,0 +1,21 @@
+model,model_short,model_type,subset,correct,total,score
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-GPTOut,31,47,0.6595744680851063
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-manual,31,46,0.6739130434782609
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-neighbor,92,134,0.6865671641791045
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,llmbar-adver-GPTInst,71,92,0.7717391304347826
+RLHFlow/ArmoRM-Llama3-8B-v0.1,ArmoRM 8B,Custom Classifier RM,donotanswer,108,136,0.7941176470588235
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-GPTOut,0,47,0.0
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,math-prm,55,447,0.1230425055928411
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-natural,21,100,0.21
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,llmbar-adver-manual,17,46,0.3695652173913043
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,hep-js,75,164,0.4573170731707317
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,alpacaeval-easy,6,100,0.06
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,xstest-should-respond,44,250,0.176
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,alpacaeval-hard,32,95,0.3368421052631579
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,mt-bench-easy,11,28,0.3928571428571428
+Qwen/Qwen1.5-0.5B-Chat,Qwen 0.5B DPO,DPO-style implicit RM,mt-bench-med,17,40,0.425
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-GPTInst,21,92,0.2282608695652173
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,refusals-dangerous,32,100,0.32
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,refusals-offensive,36,100,0.36
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-manual,27,46,0.5869565217391305
+HuggingFaceH4/zephyr-7b-beta,Zephyr 7B DPO,DPO-style implicit RM,llmbar-adver-GPTOut,28,47,0.5957446808510638

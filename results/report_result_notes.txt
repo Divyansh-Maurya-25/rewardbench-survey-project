@@ -1,0 +1,51 @@
+RewardBench Survey Result Notes
+=============================================
+
+Model ranking by average across Chat, Chat Hard, Safety, and Reasoning:
+- ArmoRM 8B: avg=0.903, Chat=0.972, Chat Hard=0.763, Safety=0.904, Reasoning=0.974
+- Zephyr 7B DPO: avg=0.751, Chat=0.955, Chat Hard=0.590, Safety=0.669, Reasoning=0.788
+- DeBERTa RM: avg=0.597, Chat=0.804, Chat Hard=0.441, Safety=0.766, Reasoning=0.378
+- Qwen 0.5B DPO: avg=0.543, Chat=0.366, Chat Hard=0.632, Safety=0.566, Reasoning=0.607
+
+Comparison with RewardBench paper four-section average:
+- ArmoRM 8B: ours=0.903, paper=0.908, diff=-0.005
+- Zephyr 7B DPO: ours=0.751, paper=0.742, diff=0.008
+- DeBERTa RM: ours=0.597, paper=0.538, diff=0.060
+- Qwen 0.5B DPO: ours=0.543, paper=0.561, diff=-0.018
+
+Weakest subsets by model:
+
+ArmoRM 8B:
+- llmbar-adver-GPTOut: 0.660
+- llmbar-adver-manual: 0.674
+- llmbar-adver-neighbor: 0.687
+- llmbar-adver-GPTInst: 0.772
+- donotanswer: 0.794
+
+DeBERTa RM:
+- llmbar-adver-GPTOut: 0.000
+- math-prm: 0.123
+- llmbar-natural: 0.210
+- llmbar-adver-manual: 0.370
+- hep-js: 0.457
+
+Qwen 0.5B DPO:
+- alpacaeval-easy: 0.060
+- xstest-should-respond: 0.176
+- alpacaeval-hard: 0.337
+- mt-bench-easy: 0.393
+- mt-bench-med: 0.425
+
+Zephyr 7B DPO:
+- llmbar-adver-GPTInst: 0.228
+- refusals-dangerous: 0.320
+- refusals-offensive: 0.360
+- llmbar-adver-manual: 0.587
+- llmbar-adver-GPTOut: 0.596
+
+Suggested interpretation:
+- ArmoRM is the strongest and most consistent model across all four main RewardBench sections.
+- DeBERTa performs well on Chat and Safety but drops sharply on Chat Hard and Reasoning.
+- Qwen 0.5B performs poorly on standard Chat but is comparatively stronger on Chat Hard and Reasoning.
+- Safety must be examined by subset because should-refuse and should-respond behavior reveal over-refusal or under-refusal patterns.
+- The local results broadly preserve the paper's trend: ArmoRM leads, Zephyr is strong on Chat but weaker on Safety, and smaller baselines show uneven behavior.
