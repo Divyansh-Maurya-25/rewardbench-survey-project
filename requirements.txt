@@ -1,8 +1,11 @@
 torch
-transformers
+transformers==4.51.0
 datasets
 accelerate
 pandas
 matplotlib
 numpy
 rewardbench
+bitsandbytes
+sentencepiece
+tabulate
