@@ -1,5 +1,0 @@
-model,type,overall,chat,chat_hard,safety,reasoning,notes
-OpenAssistant/reward-model-deberta-v3-large-v2,Classifier RM,,0.8044692737430168,0.4407894736842105,0.7662162162162162,0.3775781633655262,Completed local RewardBench run; HF upload disabled.
-Qwen/Qwen1.5-0.5B-Chat,DPO-style,,0.3659217877094972,0.631578947368421,0.5662162162162162,0.606928984558302,Completed local RewardBench DPO run with batch_size=1.
-RLHFlow/ArmoRM-Llama3-8B-v0.1,Classifier RM,,0.9720670391061452,0.7631578947368421,0.904054054054054,0.9737784416434768,Completed local RewardBench run after local ArmoRM pipeline patch; batch_size=1.
-HuggingFaceH4/zephyr-7b-beta,DPO-style,,0.9245810055865922,0.6600877192982456,0.6297297297297297,0.7611584001746057,Completed local RewardBench DPO run with batch_size=1.
