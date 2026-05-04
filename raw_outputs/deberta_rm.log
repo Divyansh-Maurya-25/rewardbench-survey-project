@@ -1,0 +1,310 @@
+2026-05-04 05:13:27.073910: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-05-04 05:13:27.144565: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:__main__:[RANK 0] Running reward model on OpenAssistant/reward-model-deberta-v3-large-v2 with chat template raw
+INFO:__main__:[RANK 0] Using reward model config: {'model_builder': <bound method _BaseAutoModelClass.from_pretrained of <class 'transformers.models.auto.modeling_auto.AutoModelForSequenceClassification'>>, 'pipeline_builder': <class 'rewardbench.models.pipeline.RewardBenchPipeline'>, 'quantized': True, 'custom_dialogue': False, 'model_type': 'Seq. Classifier'}
+INFO:__main__:[RANK 0] *** Load dataset ***
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file spm.model from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/spm.model
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file tokenizer.json from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/tokenizer.json
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file added_tokens.json from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/added_tokens.json
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file special_tokens_map.json from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/special_tokens_map.json
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file tokenizer_config.json from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2060] 2026-05-04 05:13:35,772 >> loading file chat_template.jinja from cache at None
+Generating raw split:   0%|          | 0/5123 [00:00<?, ? examples/s]Generating raw split: 100%|██████████| 5123/5123 [00:00<00:00, 92398.74 examples/s]
+Generating filtered split:   0%|          | 0/2985 [00:00<?, ? examples/s]Generating filtered split: 100%|██████████| 2985/2985 [00:00<00:00, 211504.31 examples/s]
+INFO:__main__:[RANK 0] *** Preparing dataset with FastChat ***
+Map (num_proc=8):   0%|          | 0/2985 [00:00<?, ? examples/s]Map (num_proc=8):  13%|█▎        | 374/2985 [00:00<00:01, 1562.15 examples/s]Map (num_proc=8): 100%|██████████| 2985/2985 [00:00<00:00, 7307.68 examples/s]
+INFO:__main__:[RANK 0] *** Load reward model ***
+[INFO|configuration_utils.py:693] 2026-05-04 05:13:39,853 >> loading configuration file config.json from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/config.json
+[INFO|configuration_utils.py:765] 2026-05-04 05:13:39,855 >> Model config DebertaV2Config {
+  "architectures": [
+    "DebertaV2ForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "LABEL_0"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "label2id": {
+    "LABEL_0": 0
+  },
+  "layer_norm_eps": 1e-07,
+  "legacy": true,
+  "max_position_embeddings": 512,
+  "max_relative_positions": -1,
+  "model_type": "deberta-v2",
+  "norm_rel_ebd": "layer_norm",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 0,
+  "pooler_dropout": 0,
+  "pooler_hidden_act": "gelu",
+  "pooler_hidden_size": 1024,
+  "pos_att_type": [
+    "p2c",
+    "c2p"
+  ],
+  "position_biased_input": false,
+  "position_buckets": 256,
+  "problem_type": "regression",
+  "relative_attention": true,
+  "share_att_key": true,
+  "torch_dtype": "float16",
+  "transformers_version": "4.51.0",
+  "type_vocab_size": 0,
+  "vocab_size": 128100
+}
+
+[WARNING|modeling_utils.py:4158] 2026-05-04 05:13:39,887 >> The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+[INFO|modeling_utils.py:1124] 2026-05-04 05:14:06,003 >> loading weights file pytorch_model.bin from cache at /root/.cache/huggingface/hub/models--OpenAssistant--reward-model-deberta-v3-large-v2/snapshots/c355404efa9ad2ad069f3a197cae0523c14244fc/pytorch_model.bin
+[INFO|modeling_utils.py:2167] 2026-05-04 05:14:06,003 >> Instantiating DebertaV2ForSequenceClassification model under default dtype torch.float16.
+[INFO|safetensors_conversion.py:61] 2026-05-04 05:14:06,140 >> Attempting to create safetensors variant
+[INFO|safetensors_conversion.py:74] 2026-05-04 05:14:06,571 >> Safetensors PR exists
+[INFO|modeling_utils.py:4926] 2026-05-04 05:14:08,885 >> All model checkpoint weights were used when initializing DebertaV2ForSequenceClassification.
+
+[INFO|modeling_utils.py:4934] 2026-05-04 05:14:08,886 >> All the weights of DebertaV2ForSequenceClassification were initialized from the model checkpoint at OpenAssistant/reward-model-deberta-v3-large-v2.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use DebertaV2ForSequenceClassification for predictions without further training.
+INFO:__main__:[RANK 0] *** Running dataloader to collect results ***
+RM batch steps:   0%|          | 0/187 [00:00<?, ?it/s]INFO:__main__:[RANK 0] RM inference step 0/187
+RM batch steps:   1%|          | 1/187 [00:03<10:29,  3.38s/it]INFO:__main__:[RANK 0] RM inference step 1/187
+RM batch steps:   1%|          | 2/187 [00:04<07:03,  2.29s/it]INFO:__main__:[RANK 0] RM inference step 2/187
+RM batch steps:   2%|▏         | 3/187 [00:06<05:32,  1.80s/it]INFO:__main__:[RANK 0] RM inference step 3/187
+RM batch steps:   2%|▏         | 4/187 [00:06<04:20,  1.42s/it]INFO:__main__:[RANK 0] RM inference step 4/187
+RM batch steps:   3%|▎         | 5/187 [00:07<03:39,  1.20s/it]INFO:__main__:[RANK 0] RM inference step 5/187
+RM batch steps:   3%|▎         | 6/187 [00:08<03:03,  1.02s/it]INFO:__main__:[RANK 0] RM inference step 6/187
+RM batch steps:   4%|▎         | 7/187 [00:09<02:55,  1.02it/s]INFO:__main__:[RANK 0] RM inference step 7/187
+RM batch steps:   4%|▍         | 8/187 [00:10<02:40,  1.12it/s]INFO:__main__:[RANK 0] RM inference step 8/187
+RM batch steps:   5%|▍         | 9/187 [00:10<02:36,  1.14it/s]INFO:__main__:[RANK 0] RM inference step 9/187
+RM batch steps:   5%|▌         | 10/187 [00:11<02:27,  1.20it/s]INFO:__main__:[RANK 0] RM inference step 10/187
+RM batch steps:   6%|▌         | 11/187 [00:12<02:15,  1.30it/s]INFO:__main__:[RANK 0] RM inference step 11/187
+RM batch steps:   6%|▋         | 12/187 [00:12<02:02,  1.43it/s]INFO:__main__:[RANK 0] RM inference step 12/187
+RM batch steps:   7%|▋         | 13/187 [00:13<02:13,  1.30it/s]INFO:__main__:[RANK 0] RM inference step 13/187
+RM batch steps:   7%|▋         | 14/187 [00:15<03:28,  1.21s/it]INFO:__main__:[RANK 0] RM inference step 14/187
+RM batch steps:   8%|▊         | 15/187 [00:18<04:40,  1.63s/it]INFO:__main__:[RANK 0] RM inference step 15/187
+RM batch steps:   9%|▊         | 16/187 [00:20<05:07,  1.80s/it]INFO:__main__:[RANK 0] RM inference step 16/187
+RM batch steps:   9%|▉         | 17/187 [00:22<05:19,  1.88s/it]INFO:__main__:[RANK 0] RM inference step 17/187
+RM batch steps:  10%|▉         | 18/187 [00:24<04:45,  1.69s/it]INFO:__main__:[RANK 0] RM inference step 18/187
+RM batch steps:  10%|█         | 19/187 [00:25<04:13,  1.51s/it]INFO:__main__:[RANK 0] RM inference step 19/187
+RM batch steps:  11%|█         | 20/187 [00:26<03:48,  1.37s/it]INFO:__main__:[RANK 0] RM inference step 20/187
+RM batch steps:  11%|█         | 21/187 [00:27<03:29,  1.26s/it]INFO:__main__:[RANK 0] RM inference step 21/187
+RM batch steps:  12%|█▏        | 22/187 [00:28<03:16,  1.19s/it]INFO:__main__:[RANK 0] RM inference step 22/187
+RM batch steps:  12%|█▏        | 23/187 [00:29<03:02,  1.11s/it]INFO:__main__:[RANK 0] RM inference step 23/187
+RM batch steps:  13%|█▎        | 24/187 [00:29<02:40,  1.02it/s]INFO:__main__:[RANK 0] RM inference step 24/187
+RM batch steps:  13%|█▎        | 25/187 [00:30<02:23,  1.13it/s]INFO:__main__:[RANK 0] RM inference step 25/187
+RM batch steps:  14%|█▍        | 26/187 [00:31<02:10,  1.23it/s]INFO:__main__:[RANK 0] RM inference step 26/187
+RM batch steps:  14%|█▍        | 27/187 [00:31<01:59,  1.34it/s]INFO:__main__:[RANK 0] RM inference step 27/187
+RM batch steps:  15%|█▍        | 28/187 [00:32<01:47,  1.47it/s]INFO:__main__:[RANK 0] RM inference step 28/187
+RM batch steps:  16%|█▌        | 29/187 [00:33<02:01,  1.30it/s]INFO:__main__:[RANK 0] RM inference step 29/187
+RM batch steps:  16%|█▌        | 30/187 [00:33<01:46,  1.47it/s]INFO:__main__:[RANK 0] RM inference step 30/187
+RM batch steps:  17%|█▋        | 31/187 [00:34<01:35,  1.64it/s]INFO:__main__:[RANK 0] RM inference step 31/187
+RM batch steps:  17%|█▋        | 32/187 [00:34<01:25,  1.81it/s]INFO:__main__:[RANK 0] RM inference step 32/187
+RM batch steps:  18%|█▊        | 33/187 [00:35<01:23,  1.84it/s]INFO:__main__:[RANK 0] RM inference step 33/187
+RM batch steps:  18%|█▊        | 34/187 [00:35<01:18,  1.94it/s]INFO:__main__:[RANK 0] RM inference step 34/187
+RM batch steps:  19%|█▊        | 35/187 [00:36<01:16,  1.99it/s]INFO:__main__:[RANK 0] RM inference step 35/187
+RM batch steps:  19%|█▉        | 36/187 [00:36<01:12,  2.08it/s]INFO:__main__:[RANK 0] RM inference step 36/187
+RM batch steps:  20%|█▉        | 37/187 [00:36<01:13,  2.05it/s]INFO:__main__:[RANK 0] RM inference step 37/187
+RM batch steps:  20%|██        | 38/187 [00:37<01:23,  1.78it/s]INFO:__main__:[RANK 0] RM inference step 38/187
+RM batch steps:  21%|██        | 39/187 [00:38<01:26,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 39/187
+RM batch steps:  21%|██▏       | 40/187 [00:38<01:29,  1.64it/s]INFO:__main__:[RANK 0] RM inference step 40/187
+RM batch steps:  22%|██▏       | 41/187 [00:39<01:28,  1.64it/s]INFO:__main__:[RANK 0] RM inference step 41/187
+RM batch steps:  22%|██▏       | 42/187 [00:40<01:28,  1.64it/s]INFO:__main__:[RANK 0] RM inference step 42/187
+RM batch steps:  23%|██▎       | 43/187 [00:40<01:34,  1.53it/s]INFO:__main__:[RANK 0] RM inference step 43/187
+RM batch steps:  24%|██▎       | 44/187 [00:41<01:36,  1.48it/s]INFO:__main__:[RANK 0] RM inference step 44/187
+RM batch steps:  24%|██▍       | 45/187 [00:42<01:36,  1.47it/s]INFO:__main__:[RANK 0] RM inference step 45/187
+RM batch steps:  25%|██▍       | 46/187 [00:42<01:25,  1.65it/s]INFO:__main__:[RANK 0] RM inference step 46/187
+RM batch steps:  25%|██▌       | 47/187 [00:43<01:18,  1.79it/s]INFO:__main__:[RANK 0] RM inference step 47/187
+RM batch steps:  26%|██▌       | 48/187 [00:43<01:15,  1.84it/s]INFO:__main__:[RANK 0] RM inference step 48/187
+RM batch steps:  26%|██▌       | 49/187 [00:44<01:20,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 49/187
+RM batch steps:  27%|██▋       | 50/187 [00:45<01:19,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 50/187
+RM batch steps:  27%|██▋       | 51/187 [00:45<01:21,  1.67it/s]INFO:__main__:[RANK 0] RM inference step 51/187
+RM batch steps:  28%|██▊       | 52/187 [00:46<01:21,  1.65it/s]INFO:__main__:[RANK 0] RM inference step 52/187
+RM batch steps:  28%|██▊       | 53/187 [00:46<01:19,  1.68it/s]INFO:__main__:[RANK 0] RM inference step 53/187
+RM batch steps:  29%|██▉       | 54/187 [00:47<01:18,  1.69it/s]INFO:__main__:[RANK 0] RM inference step 54/187
+RM batch steps:  29%|██▉       | 55/187 [00:47<01:16,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 55/187
+RM batch steps:  30%|██▉       | 56/187 [00:48<01:19,  1.65it/s]INFO:__main__:[RANK 0] RM inference step 56/187
+RM batch steps:  30%|███       | 57/187 [00:49<01:17,  1.68it/s]INFO:__main__:[RANK 0] RM inference step 57/187
+RM batch steps:  31%|███       | 58/187 [00:49<01:17,  1.67it/s]INFO:__main__:[RANK 0] RM inference step 58/187
+RM batch steps:  32%|███▏      | 59/187 [00:50<01:14,  1.73it/s]INFO:__main__:[RANK 0] RM inference step 59/187
+RM batch steps:  32%|███▏      | 60/187 [00:50<01:15,  1.69it/s]INFO:__main__:[RANK 0] RM inference step 60/187
+RM batch steps:  33%|███▎      | 61/187 [00:51<01:22,  1.52it/s]INFO:__main__:[RANK 0] RM inference step 61/187
+RM batch steps:  33%|███▎      | 62/187 [00:52<01:32,  1.35it/s]INFO:__main__:[RANK 0] RM inference step 62/187
+RM batch steps:  34%|███▎      | 63/187 [00:53<01:33,  1.32it/s]INFO:__main__:[RANK 0] RM inference step 63/187
+RM batch steps:  34%|███▍      | 64/187 [00:54<01:24,  1.45it/s]INFO:__main__:[RANK 0] RM inference step 64/187
+RM batch steps:  35%|███▍      | 65/187 [00:54<01:16,  1.59it/s]INFO:__main__:[RANK 0] RM inference step 65/187
+RM batch steps:  35%|███▌      | 66/187 [00:55<01:11,  1.69it/s]INFO:__main__:[RANK 0] RM inference step 66/187
+RM batch steps:  36%|███▌      | 67/187 [00:55<01:06,  1.81it/s]INFO:__main__:[RANK 0] RM inference step 67/187
+RM batch steps:  36%|███▋      | 68/187 [00:55<01:02,  1.90it/s]INFO:__main__:[RANK 0] RM inference step 68/187
+RM batch steps:  37%|███▋      | 69/187 [00:56<01:00,  1.96it/s]INFO:__main__:[RANK 0] RM inference step 69/187
+RM batch steps:  37%|███▋      | 70/187 [00:56<00:57,  2.02it/s]INFO:__main__:[RANK 0] RM inference step 70/187
+RM batch steps:  38%|███▊      | 71/187 [00:57<00:56,  2.07it/s]INFO:__main__:[RANK 0] RM inference step 71/187
+RM batch steps:  39%|███▊      | 72/187 [00:57<00:56,  2.02it/s]INFO:__main__:[RANK 0] RM inference step 72/187
+RM batch steps:  39%|███▉      | 73/187 [00:58<00:56,  2.01it/s]INFO:__main__:[RANK 0] RM inference step 73/187
+RM batch steps:  40%|███▉      | 74/187 [00:58<00:59,  1.91it/s]INFO:__main__:[RANK 0] RM inference step 74/187
+RM batch steps:  40%|████      | 75/187 [00:59<00:59,  1.90it/s]INFO:__main__:[RANK 0] RM inference step 75/187
+RM batch steps:  41%|████      | 76/187 [00:59<00:56,  1.96it/s]INFO:__main__:[RANK 0] RM inference step 76/187
+RM batch steps:  41%|████      | 77/187 [01:00<00:54,  2.03it/s]INFO:__main__:[RANK 0] RM inference step 77/187
+RM batch steps:  42%|████▏     | 78/187 [01:00<00:54,  2.00it/s]INFO:__main__:[RANK 0] RM inference step 78/187
+RM batch steps:  42%|████▏     | 79/187 [01:01<00:52,  2.08it/s]INFO:__main__:[RANK 0] RM inference step 79/187
+RM batch steps:  43%|████▎     | 80/187 [01:01<00:50,  2.13it/s]INFO:__main__:[RANK 0] RM inference step 80/187
+RM batch steps:  43%|████▎     | 81/187 [01:02<00:48,  2.18it/s]INFO:__main__:[RANK 0] RM inference step 81/187
+RM batch steps:  44%|████▍     | 82/187 [01:02<00:48,  2.17it/s]INFO:__main__:[RANK 0] RM inference step 82/187
+RM batch steps:  44%|████▍     | 83/187 [01:03<00:48,  2.15it/s]INFO:__main__:[RANK 0] RM inference step 83/187
+RM batch steps:  45%|████▍     | 84/187 [01:03<00:47,  2.15it/s]INFO:__main__:[RANK 0] RM inference step 84/187
+RM batch steps:  45%|████▌     | 85/187 [01:04<00:46,  2.19it/s]INFO:__main__:[RANK 0] RM inference step 85/187
+RM batch steps:  46%|████▌     | 86/187 [01:04<00:45,  2.22it/s]INFO:__main__:[RANK 0] RM inference step 86/187
+RM batch steps:  47%|████▋     | 87/187 [01:04<00:44,  2.27it/s]INFO:__main__:[RANK 0] RM inference step 87/187
+RM batch steps:  47%|████▋     | 88/187 [01:05<00:43,  2.28it/s]INFO:__main__:[RANK 0] RM inference step 88/187
+RM batch steps:  48%|████▊     | 89/187 [01:05<00:45,  2.15it/s]INFO:__main__:[RANK 0] RM inference step 89/187
+RM batch steps:  48%|████▊     | 90/187 [01:06<00:48,  2.00it/s]INFO:__main__:[RANK 0] RM inference step 90/187
+RM batch steps:  49%|████▊     | 91/187 [01:07<00:49,  1.93it/s]INFO:__main__:[RANK 0] RM inference step 91/187
+RM batch steps:  49%|████▉     | 92/187 [01:07<00:49,  1.92it/s]INFO:__main__:[RANK 0] RM inference step 92/187
+RM batch steps:  50%|████▉     | 93/187 [01:08<00:53,  1.77it/s]INFO:__main__:[RANK 0] RM inference step 93/187
+RM batch steps:  50%|█████     | 94/187 [01:08<00:51,  1.82it/s]INFO:__main__:[RANK 0] RM inference step 94/187
+RM batch steps:  51%|█████     | 95/187 [01:09<01:05,  1.41it/s]INFO:__main__:[RANK 0] RM inference step 95/187
+RM batch steps:  51%|█████▏    | 96/187 [01:10<01:01,  1.47it/s]INFO:__main__:[RANK 0] RM inference step 96/187
+RM batch steps:  52%|█████▏    | 97/187 [01:11<00:59,  1.50it/s]INFO:__main__:[RANK 0] RM inference step 97/187
+RM batch steps:  52%|█████▏    | 98/187 [01:11<00:53,  1.66it/s]INFO:__main__:[RANK 0] RM inference step 98/187
+RM batch steps:  53%|█████▎    | 99/187 [01:12<00:49,  1.78it/s]INFO:__main__:[RANK 0] RM inference step 99/187
+RM batch steps:  53%|█████▎    | 100/187 [01:12<00:46,  1.88it/s]INFO:__main__:[RANK 0] RM inference step 100/187
+RM batch steps:  54%|█████▍    | 101/187 [01:12<00:43,  1.99it/s]INFO:__main__:[RANK 0] RM inference step 101/187
+RM batch steps:  55%|█████▍    | 102/187 [01:13<00:42,  1.99it/s]INFO:__main__:[RANK 0] RM inference step 102/187
+RM batch steps:  55%|█████▌    | 103/187 [01:14<00:45,  1.86it/s]INFO:__main__:[RANK 0] RM inference step 103/187
+RM batch steps:  56%|█████▌    | 104/187 [01:14<00:44,  1.85it/s]INFO:__main__:[RANK 0] RM inference step 104/187
+RM batch steps:  56%|█████▌    | 105/187 [01:15<00:44,  1.86it/s]INFO:__main__:[RANK 0] RM inference step 105/187
+RM batch steps:  57%|█████▋    | 106/187 [01:15<00:47,  1.70it/s]INFO:__main__:[RANK 0] RM inference step 106/187
+RM batch steps:  57%|█████▋    | 107/187 [01:16<00:46,  1.71it/s]INFO:__main__:[RANK 0] RM inference step 107/187
+RM batch steps:  58%|█████▊    | 108/187 [01:16<00:43,  1.82it/s]INFO:__main__:[RANK 0] RM inference step 108/187
+RM batch steps:  58%|█████▊    | 109/187 [01:17<00:42,  1.86it/s]INFO:__main__:[RANK 0] RM inference step 109/187
+RM batch steps:  59%|█████▉    | 110/187 [01:17<00:39,  1.94it/s]INFO:__main__:[RANK 0] RM inference step 110/187
+RM batch steps:  59%|█████▉    | 111/187 [01:18<00:38,  2.00it/s]INFO:__main__:[RANK 0] RM inference step 111/187
+RM batch steps:  60%|█████▉    | 112/187 [01:18<00:38,  1.94it/s]INFO:__main__:[RANK 0] RM inference step 112/187
+RM batch steps:  60%|██████    | 113/187 [01:19<00:41,  1.77it/s]INFO:__main__:[RANK 0] RM inference step 113/187
+RM batch steps:  61%|██████    | 114/187 [01:20<00:41,  1.77it/s]INFO:__main__:[RANK 0] RM inference step 114/187
+RM batch steps:  61%|██████▏   | 115/187 [01:20<00:42,  1.71it/s]INFO:__main__:[RANK 0] RM inference step 115/187
+RM batch steps:  62%|██████▏   | 116/187 [01:21<00:46,  1.53it/s]INFO:__main__:[RANK 0] RM inference step 116/187
+RM batch steps:  63%|██████▎   | 117/187 [01:22<00:44,  1.57it/s]INFO:__main__:[RANK 0] RM inference step 117/187
+RM batch steps:  63%|██████▎   | 118/187 [01:22<00:43,  1.58it/s]INFO:__main__:[RANK 0] RM inference step 118/187
+RM batch steps:  64%|██████▎   | 119/187 [01:23<00:42,  1.60it/s]INFO:__main__:[RANK 0] RM inference step 119/187
+RM batch steps:  64%|██████▍   | 120/187 [01:23<00:38,  1.73it/s]INFO:__main__:[RANK 0] RM inference step 120/187
+RM batch steps:  65%|██████▍   | 121/187 [01:24<00:35,  1.85it/s]INFO:__main__:[RANK 0] RM inference step 121/187
+RM batch steps:  65%|██████▌   | 122/187 [01:24<00:34,  1.88it/s]INFO:__main__:[RANK 0] RM inference step 122/187
+RM batch steps:  66%|██████▌   | 123/187 [01:25<00:39,  1.61it/s]INFO:__main__:[RANK 0] RM inference step 123/187
+RM batch steps:  66%|██████▋   | 124/187 [01:26<00:38,  1.63it/s]INFO:__main__:[RANK 0] RM inference step 124/187
+RM batch steps:  67%|██████▋   | 125/187 [01:26<00:37,  1.65it/s]INFO:__main__:[RANK 0] RM inference step 125/187
+RM batch steps:  67%|██████▋   | 126/187 [01:27<00:40,  1.50it/s]INFO:__main__:[RANK 0] RM inference step 126/187
+RM batch steps:  68%|██████▊   | 127/187 [01:28<00:41,  1.44it/s]INFO:__main__:[RANK 0] RM inference step 127/187
+RM batch steps:  68%|██████▊   | 128/187 [01:29<00:46,  1.27it/s]INFO:__main__:[RANK 0] RM inference step 128/187
+RM batch steps:  69%|██████▉   | 129/187 [01:29<00:39,  1.46it/s]INFO:__main__:[RANK 0] RM inference step 129/187
+RM batch steps:  70%|██████▉   | 130/187 [01:30<00:35,  1.59it/s]INFO:__main__:[RANK 0] RM inference step 130/187
+RM batch steps:  70%|███████   | 131/187 [01:30<00:32,  1.74it/s]INFO:__main__:[RANK 0] RM inference step 131/187
+RM batch steps:  71%|███████   | 132/187 [01:31<00:29,  1.88it/s]INFO:__main__:[RANK 0] RM inference step 132/187
+RM batch steps:  71%|███████   | 133/187 [01:31<00:31,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 133/187
+RM batch steps:  72%|███████▏  | 134/187 [01:32<00:30,  1.75it/s]INFO:__main__:[RANK 0] RM inference step 134/187
+RM batch steps:  72%|███████▏  | 135/187 [01:33<00:30,  1.70it/s]INFO:__main__:[RANK 0] RM inference step 135/187
+RM batch steps:  73%|███████▎  | 136/187 [01:33<00:33,  1.52it/s]INFO:__main__:[RANK 0] RM inference step 136/187
+RM batch steps:  73%|███████▎  | 137/187 [01:34<00:31,  1.58it/s]INFO:__main__:[RANK 0] RM inference step 137/187
+RM batch steps:  74%|███████▍  | 138/187 [01:35<00:32,  1.49it/s]INFO:__main__:[RANK 0] RM inference step 138/187
+RM batch steps:  74%|███████▍  | 139/187 [01:35<00:28,  1.66it/s]INFO:__main__:[RANK 0] RM inference step 139/187
+RM batch steps:  75%|███████▍  | 140/187 [01:36<00:28,  1.67it/s]INFO:__main__:[RANK 0] RM inference step 140/187
+RM batch steps:  75%|███████▌  | 141/187 [01:36<00:25,  1.80it/s]INFO:__main__:[RANK 0] RM inference step 141/187
+RM batch steps:  76%|███████▌  | 142/187 [01:37<00:25,  1.79it/s]INFO:__main__:[RANK 0] RM inference step 142/187
+RM batch steps:  76%|███████▋  | 143/187 [01:37<00:23,  1.89it/s]INFO:__main__:[RANK 0] RM inference step 143/187
+RM batch steps:  77%|███████▋  | 144/187 [01:38<00:25,  1.71it/s]INFO:__main__:[RANK 0] RM inference step 144/187
+RM batch steps:  78%|███████▊  | 145/187 [01:38<00:23,  1.81it/s]INFO:__main__:[RANK 0] RM inference step 145/187
+RM batch steps:  78%|███████▊  | 146/187 [01:39<00:23,  1.71it/s]INFO:__main__:[RANK 0] RM inference step 146/187
+RM batch steps:  79%|███████▊  | 147/187 [01:40<00:25,  1.54it/s]INFO:__main__:[RANK 0] RM inference step 147/187
+RM batch steps:  79%|███████▉  | 148/187 [01:40<00:24,  1.62it/s]INFO:__main__:[RANK 0] RM inference step 148/187
+RM batch steps:  80%|███████▉  | 149/187 [01:42<00:28,  1.32it/s]INFO:__main__:[RANK 0] RM inference step 149/187
+RM batch steps:  80%|████████  | 150/187 [01:42<00:26,  1.41it/s]INFO:__main__:[RANK 0] RM inference step 150/187
+RM batch steps:  81%|████████  | 151/187 [01:43<00:22,  1.58it/s]INFO:__main__:[RANK 0] RM inference step 151/187
+RM batch steps:  81%|████████▏ | 152/187 [01:43<00:20,  1.72it/s]INFO:__main__:[RANK 0] RM inference step 152/187
+RM batch steps:  82%|████████▏ | 153/187 [01:44<00:19,  1.73it/s]INFO:__main__:[RANK 0] RM inference step 153/187
+RM batch steps:  82%|████████▏ | 154/187 [01:44<00:20,  1.63it/s]INFO:__main__:[RANK 0] RM inference step 154/187
+RM batch steps:  83%|████████▎ | 155/187 [01:45<00:19,  1.62it/s]INFO:__main__:[RANK 0] RM inference step 155/187
+RM batch steps:  83%|████████▎ | 156/187 [01:46<00:19,  1.62it/s]INFO:__main__:[RANK 0] RM inference step 156/187
+RM batch steps:  84%|████████▍ | 157/187 [01:46<00:20,  1.47it/s]INFO:__main__:[RANK 0] RM inference step 157/187
+RM batch steps:  84%|████████▍ | 158/187 [01:47<00:18,  1.53it/s]INFO:__main__:[RANK 0] RM inference step 158/187
+RM batch steps:  85%|████████▌ | 159/187 [01:48<00:24,  1.16it/s]INFO:__main__:[RANK 0] RM inference step 159/187
+RM batch steps:  86%|████████▌ | 160/187 [01:50<00:27,  1.01s/it]INFO:__main__:[RANK 0] RM inference step 160/187
+RM batch steps:  86%|████████▌ | 161/187 [01:51<00:29,  1.14s/it]INFO:__main__:[RANK 0] RM inference step 161/187
+RM batch steps:  87%|████████▋ | 162/187 [01:53<00:36,  1.47s/it]INFO:__main__:[RANK 0] RM inference step 162/187
+RM batch steps:  87%|████████▋ | 163/187 [01:55<00:34,  1.43s/it]INFO:__main__:[RANK 0] RM inference step 163/187
+RM batch steps:  88%|████████▊ | 164/187 [01:56<00:31,  1.37s/it]INFO:__main__:[RANK 0] RM inference step 164/187
+RM batch steps:  88%|████████▊ | 165/187 [01:57<00:29,  1.36s/it]INFO:__main__:[RANK 0] RM inference step 165/187
+RM batch steps:  89%|████████▉ | 166/187 [01:58<00:26,  1.27s/it]INFO:__main__:[RANK 0] RM inference step 166/187
+RM batch steps:  89%|████████▉ | 167/187 [01:59<00:23,  1.18s/it]INFO:__main__:[RANK 0] RM inference step 167/187
+RM batch steps:  90%|████████▉ | 168/187 [02:00<00:20,  1.09s/it]INFO:__main__:[RANK 0] RM inference step 168/187
+RM batch steps:  90%|█████████ | 169/187 [02:01<00:18,  1.01s/it]INFO:__main__:[RANK 0] RM inference step 169/187
+RM batch steps:  91%|█████████ | 170/187 [02:02<00:17,  1.05s/it]INFO:__main__:[RANK 0] RM inference step 170/187
+RM batch steps:  91%|█████████▏| 171/187 [02:03<00:15,  1.01it/s]INFO:__main__:[RANK 0] RM inference step 171/187
+RM batch steps:  92%|█████████▏| 172/187 [02:04<00:13,  1.08it/s]INFO:__main__:[RANK 0] RM inference step 172/187
+RM batch steps:  93%|█████████▎| 173/187 [02:05<00:13,  1.06it/s]INFO:__main__:[RANK 0] RM inference step 173/187
+RM batch steps:  93%|█████████▎| 174/187 [02:06<00:13,  1.05s/it]INFO:__main__:[RANK 0] RM inference step 174/187
+RM batch steps:  94%|█████████▎| 175/187 [02:07<00:11,  1.04it/s]INFO:__main__:[RANK 0] RM inference step 175/187
+RM batch steps:  94%|█████████▍| 176/187 [02:08<00:10,  1.04it/s]INFO:__main__:[RANK 0] RM inference step 176/187
+RM batch steps:  95%|█████████▍| 177/187 [02:09<00:09,  1.07it/s]INFO:__main__:[RANK 0] RM inference step 177/187
+RM batch steps:  95%|█████████▌| 178/187 [02:10<00:08,  1.04it/s]INFO:__main__:[RANK 0] RM inference step 178/187
+RM batch steps:  96%|█████████▌| 179/187 [02:11<00:07,  1.05it/s]INFO:__main__:[RANK 0] RM inference step 179/187
+RM batch steps:  96%|█████████▋| 180/187 [02:11<00:06,  1.07it/s]INFO:__main__:[RANK 0] RM inference step 180/187
+RM batch steps:  97%|█████████▋| 181/187 [02:12<00:05,  1.18it/s]INFO:__main__:[RANK 0] RM inference step 181/187
+RM batch steps:  97%|█████████▋| 182/187 [02:13<00:04,  1.25it/s]INFO:__main__:[RANK 0] RM inference step 182/187
+RM batch steps:  98%|█████████▊| 183/187 [02:14<00:03,  1.27it/s]INFO:__main__:[RANK 0] RM inference step 183/187
+RM batch steps:  98%|█████████▊| 184/187 [02:14<00:02,  1.23it/s]INFO:__main__:[RANK 0] RM inference step 184/187
+RM batch steps:  99%|█████████▉| 185/187 [02:15<00:01,  1.28it/s]INFO:__main__:[RANK 0] RM inference step 185/187
+RM batch steps:  99%|█████████▉| 186/187 [02:16<00:00,  1.41it/s]INFO:__main__:[RANK 0] RM inference step 186/187
+RM batch steps: 100%|██████████| 187/187 [02:16<00:00,  1.58it/s]RM batch steps: 100%|██████████| 187/187 [02:16<00:00,  1.37it/s]
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 77498.25 examples/s]
+alpacaeval-easy: 84/100 (0.84)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80291.39 examples/s]
+alpacaeval-hard: 92/95 (0.968421052631579)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 79242.50 examples/s]
+alpacaeval-length: 65/95 (0.6842105263157895)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 78696.09 examples/s]
+donotanswer: 70/136 (0.5147058823529411)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 79287.16 examples/s]
+hep-cpp: 98/164 (0.5975609756097561)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 81349.40 examples/s]
+hep-go: 96/164 (0.5853658536585366)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80751.25 examples/s]
+hep-java: 135/164 (0.823170731707317)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80283.15 examples/s]
+hep-js: 75/164 (0.4573170731707317)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80362.00 examples/s]
+hep-python: 94/164 (0.573170731707317)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80343.95 examples/s]
+hep-rust: 124/164 (0.7560975609756098)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 78311.16 examples/s]
+llmbar-adver-GPTInst: 65/92 (0.7065217391304348)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 79864.75 examples/s]
+llmbar-adver-GPTOut: 0/47 (0.0)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80007.65 examples/s]
+llmbar-adver-manual: 17/46 (0.3695652173913043)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 78806.56 examples/s]
+llmbar-adver-neighbor: 66/134 (0.4925373134328358)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 78578.05 examples/s]
+llmbar-natural: 21/100 (0.21)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 79062.35 examples/s]
+math-prm: 55/447 (0.12304250559284116)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 80966.41 examples/s]
+mt-bench-easy: 14/28 (0.5)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 82117.73 examples/s]
+mt-bench-hard: 32/37 (0.8648648648648649)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 78822.93 examples/s]
+mt-bench-med: 33/40 (0.825)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 81856.26 examples/s]
+refusals-dangerous: 64/100 (0.64)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 81602.84 examples/s]
+refusals-offensive: 70/100 (0.7)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 82239.09 examples/s]
+xstest-should-refuse: 146/154 (0.948051948051948)
+Filter:   0%|          | 0/2985 [00:00<?, ? examples/s]Filter: 100%|██████████| 2985/2985 [00:00<00:00, 82450.86 examples/s]
+INFO:__main__:[RANK 0] Uploaded reward model results to local_only
+INFO:__main__:[RANK 0] Uploading chosen-rejected text with scores to local_only
+xstest-should-respond: 217/250 (0.868)
+{'Chat': 0.8044692737430168, 'Chat Hard': 0.4407894736842105, 'Safety': 0.7662162162162162, 'Reasoning': 0.37757816336552624}
+Skipping Hugging Face Hub upload; results kept locally.
+Skipping Hugging Face Hub upload; results kept locally.
