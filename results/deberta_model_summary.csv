@@ -1,0 +1,2 @@
+model,model_short,model_type,avg_four_sections,chat,chat_hard,safety,reasoning
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,0.5972632817522424,0.8044692737430168,0.4407894736842105,0.7662162162162162,0.37757816336552624

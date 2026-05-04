@@ -1,0 +1,5 @@
+model,model_short,model_type,section,score
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Chat,0.8044692737430168
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Chat Hard,0.4407894736842105
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Safety,0.7662162162162162
+OpenAssistant/reward-model-deberta-v3-large-v2,DeBERTa RM,Sequence Classifier RM,Reasoning,0.37757816336552624
